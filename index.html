@@ -112,7 +112,7 @@
 <body>
   <div class="form-wrapper">
     <input type="hidden" name="_subject" value="Nowa wiadomość z formularza">
-    <form action="https://formspree.io/f/xqaygvbb" method="POST">
+    <form action="https://formspree.io/f/xqaygvbb" method="POST" onsubmit="setTimeout(() => this.reset(), 100);">
       
       <div>
         <label for="name">IMIĘ</label>
@@ -140,7 +140,6 @@
   </div>
 </body>
 </html>
-
 
 
 
