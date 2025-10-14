@@ -60,17 +60,16 @@
       gap: 8px;
     }
 
-    .checkbox-wrapper input[type="checkbox"] {
-      width: 16px;
-      height: 16px;
-      border: 1px solid #000000;
-      background-color: #ffffff;
-      appearance: none;
-      -webkit-appearance: none;
-      outline: none;
-      cursor: pointer;
-      position: relative;
-    }
+  .checkbox-wrapper input[type="checkbox"]:checked::after {
+  content: "✔";
+  position: relative;
+  font-size: 12px;
+  color: black;
+  top: 0;
+  left: 1px;
+  line-height: 16px;
+}
+
 
     .checkbox-wrapper input[type="checkbox"]:checked::after {
       content: "";
@@ -135,6 +134,7 @@
   </div>
 </body>
 </html>
+
 
 
 
