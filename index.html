@@ -54,6 +54,22 @@
       color: #C7C7C7;
     }
 
+   input[type="text"]:hover,
+   input[type="email"]:hover {
+      background-color: #F4F0FF;
+      border-color: #563BAC;
+      transition: border-color 0.2s ease-in-out;
+    }
+
+   input[type="text"]:focus,
+   input[type="email"]:focus {
+     border-color: #32206C;
+     background-color: #F4F0FF;
+     box-shadow: 0 0 0 3px rgba(105, 74, 206, 1); /* efekt grubszej ramki */
+     outline: none;
+     transition: all 0.2s ease-in-out;
+}
+
 .checkbox-wrapper label {
   display: flex;
   align-items: center;
@@ -75,7 +91,7 @@
 .checkbox-wrapper .checkmark {
   width: 16px;
   height: 16px;
-  border: 1px solid #000;
+  border: 1px solid #C7C7C7;
   background-color: #fff;
   position: relative;
   flex-shrink: 0;
@@ -93,6 +109,21 @@
   transform: rotate(45deg);
 }
 
+.checkbox-wrapper label:hover .checkmark {
+  background-color: #F4F0FF;
+  border-color: #000;
+  transition: all 0.2s ease-in-out;
+
+}
+
+.checkbox-wrapper input[type="checkbox"]:focus + .checkmark {
+  box-shadow: 0 0 0 2px rgba(86, 59, 172, 1);
+  border-color: #563BAC;
+  transition: all 0.2s ease-in-out;
+
+}
+
+
 
 button {
   height: 52px;
@@ -109,6 +140,13 @@ button {
 
 button:hover {
   background-color: #563BAC;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 191, 255, 1);
+  transition: all 0.2s ease-in-out;
+
 }
     
   </style>
@@ -144,19 +182,3 @@ button:hover {
   </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
