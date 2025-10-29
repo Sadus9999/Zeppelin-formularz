@@ -156,7 +156,7 @@ button:focus {
 <body>
   <div class="form-wrapper">
     <input type="hidden" name="_subject" value="Nowa wiadomość z formularza">
-    <form action="https://formspree.io/f/mdkwyeqn" method="POST" onsubmit="setTimeout(() => this.reset(), 100);">
+    <form action="https://formspree.io/f/mdkwyeqn" method="POST" onsubmit="gtag('Event', 'form_sent', { Event_category: 'contact', Event_label: 'Formularz Zeppelin' }); setTimeout(() => this.reset(), 200);">
       
       <div>
         <label for="name">Imię*</label>
@@ -184,6 +184,7 @@ button:focus {
   </div>
 </body>
 </html>
+
 
 
 
