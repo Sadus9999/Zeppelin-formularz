@@ -156,7 +156,7 @@ button:focus {
 <body>
   <div class="form-wrapper">
     <input type="hidden" name="_subject" value="Nowa wiadomość z formularza">
-    <form action="https://formspree.io/f/mdkwyeqn" method="POST"
+    <form id="contactForm" action="https://formspree.io/f/mdkwyeqn" method="POST">
       onsubmit="window.parent.postMessage('form_sent', '*'); setTimeout(() => this.reset(), 200);">
       
       <div>
@@ -214,6 +214,7 @@ button:focus {
 </script>
 </body>
 </html>
+
 
 
 
