@@ -156,7 +156,7 @@ button:focus {
 <body>
   <div class="form-wrapper">
     <input type="hidden" name="_subject" value="Nowa wiadomość z formularza">
-    <form action="https://formspree.io/f/mdkwyeqn" method="POST" onsubmit="gtag('Event', 'form_sent', { Event_category: 'contact', Event_label: 'Formularz Zeppelin' }); setTimeout(() => this.reset(), 200);">
+    <form <form action="https://formspree.io/f/mjkwlwyk" method="POST" onsubmit="handleSubmit(event)">
       
       <div>
         <label for="name">Imię*</label>
@@ -182,8 +182,40 @@ button:focus {
       <button type="submit">Wyślij</button>
     </form>
   </div>
+  <script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+
+  // Wyślij do Formspree
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(() => {
+    // Wysyłamy event do GA4
+    if (typeof gtag === "function") {
+      gtag('event', 'form_sent', {
+        event_category: 'contact',
+        event_label: 'Formularz Zeppelin'
+      });
+    }
+
+    // Reset formularza
+    form.reset();
+
+    // Opcjonalnie możesz pokazać mini komunikat
+    alert("Dziękujemy! Wiadomość została wysłana ✅");
+  })
+  .catch(() => {
+    alert("Ups! Coś poszło nie tak, spróbuj ponownie 🙏");
+  });
+}
+</script>
 </body>
 </html>
+
 
 
 
